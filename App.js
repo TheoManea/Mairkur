@@ -8,6 +8,9 @@ import LoginScreen from './screens/Login';
 import DetailsEvent from './screens/DetailsEvent';
 import AdminPanel from './screens/AdminPanel';
 import ManageEvent from './screens/ManageEvent';
+import MyData from './screens/MyData';
+import ManageUser from './screens/ManageUser';
+import EditEvent from './screens/EditEvent';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +24,9 @@ const MyStack = () => {
         <Stack.Screen name="DetailsEvent" component={DetailsEvent} />
         <Stack.Screen name="AdminPanel" component={AdminPanel} />
         <Stack.Screen name="ManageEvent" component={ManageEvent} />
+        <Stack.Screen name="MyData" component={MyData} />
+        <Stack.Screen name="ManageUser" component={ManageUser} />
+        <Stack.Screen name="EditEvent" component={EditEvent} />
       </Stack.Navigator>
 
     </NavigationContainer>

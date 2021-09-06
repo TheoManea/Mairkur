@@ -23,9 +23,9 @@ class AdminPanel extends React.Component {
             <View>
                 <Button title="Evenements" onPress={() => { this.props.navigation.navigate("ManageEvent", {id: this.props.route.params.jsonResponse.id, token: this.props.route.params.jsonResponse.token})}}></Button>
                 <Button title="Mes données" onPress={() => { this.props.navigation.navigate("MyData")}}></Button>
-                <Button title="utilisateurs"></Button>
-                <Button title="Associations"></Button>
-            </View>)
+                <Button title="utilisateurs" onPress={() => { this.props.navigation.navigate("ManageUser")}}></Button>
+                <Button title="Associations" ></Button>
+            </View>) 
         }
     }
   

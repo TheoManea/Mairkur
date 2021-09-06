@@ -19,7 +19,7 @@ class ManageEvent extends React.Component {
 
 
       getCardsData(idSchool = 1) {
-        fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/events/manage/', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'token' :this.props.route.params.token}, body: JSON.stringify({ userId: this.props.route.params.id }) })
+        fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/events/manage/', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': "Bearer " + this.props.route.params.token}, body: JSON.stringify({ userId: this.props.route.params.id }) })
           .then(response => response.json())
           .then(jsonResponse => this.setState({ eventStack: jsonResponse }));
     
@@ -39,7 +39,7 @@ class ManageEvent extends React.Component {
               <View style={{ width: '80%', shadowColor: 'black', shadowOffset: { width: 0, height: 2 }, shadowRadius: 6, shadowOpacity: 0.26, elevation: 8, backgroundColor: 'white', margin: 8, padding: 20, borderRadius: 10 }}>
                 <Text>{event.title}</Text>
                 <Text>{event.details}</Text>
-                <Button title="Plus d'information" onPress={() => { navigation.navigate("DetailsEvent", {event}) }} style={{ width: '30%' }}></Button>
+                <Button title="Modifier" onPress={() => { navigation.navigate("EditEvent", {event}) }} ></Button>
               </View>
             ))
         }
