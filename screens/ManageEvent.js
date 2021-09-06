@@ -39,7 +39,7 @@ class ManageEvent extends React.Component {
               <View style={{ width: '80%', shadowColor: 'black', shadowOffset: { width: 0, height: 2 }, shadowRadius: 6, shadowOpacity: 0.26, elevation: 8, backgroundColor: 'white', margin: 8, padding: 20, borderRadius: 10 }}>
                 <Text>{event.title}</Text>
                 <Text>{event.details}</Text>
-                <Button title="Modifier" onPress={() => { navigation.navigate("EditEvent", {event}) }} ></Button>
+                <Button title="Modifier" onPress={() => { navigation.navigate("EditEvent", {event, token: this.props.route.params.token, idCreator: this.props.route.params.id, idAssos: 1}) }} ></Button>
               </View>
             ))
         }

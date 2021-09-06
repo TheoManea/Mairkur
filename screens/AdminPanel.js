@@ -37,7 +37,7 @@ class AdminPanel extends React.Component {
 
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Bienvenue {this.props.route.params.jsonResponse.name} </Text>
+        <Text>Bienvenue {this.props.route.params.jsonResponse.name} | id = {this.props.route.params.jsonResponse.id}</Text>
         {
             this.filter()
         }
