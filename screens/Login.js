@@ -18,16 +18,15 @@ class Login extends React.Component {
     const email = this.state.emailInp;
     const pass = this.state.passInp;
      // http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/auth/login
-    fetch('http://localhost:3000/api/auth/login', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({ email: email, password: pass }) })
+    fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/auth/login', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify({ email: email, password: pass }) })
       .then(response => response.json())
       .then(jsonResponse => {
-        var msg = "";
         if (jsonResponse.hasOwnProperty('error')) {
-          msg = jsonResponse.error;
+          alert("Erreur de connexion");
         } else {
-          msg = jsonResponse.id + "//" + jsonResponse.token;
+          //alert("Nice pd");
+          this.props.navigation.navigate("AdminPanel", {jsonResponse});
         }
-        this.setState({ emailInp: msg });
       }
       );
   }
