@@ -20,16 +20,16 @@ class Home extends React.Component {
     }
 
     //On se connecte à la base en premier et on récupère nos données 
-    this.getCardsData(2);
+    this.getCardsData();
 
   }
 
-  getCardsData(idSchool = 1) {
-    fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/events/home/'+idSchool)
+  getCardsData() {
+    fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/events/home')
       .then(response => response.json())
       .then(jsonResponse => this.setState({ eventStack: jsonResponse }));
 
-    fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/assos/'+ idSchool)
+    fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/assos')
       .then(response => response.json())
       .then(jsonResponse => this.setState({ assoStack: jsonResponse }));
   }

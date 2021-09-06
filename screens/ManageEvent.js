@@ -13,12 +13,12 @@ class ManageEvent extends React.Component {
         }
     
         //On se connecte à la base en premier et on récupère nos données 
-        this.getCardsData(2);
+        this.getCardsData();
     
       }
 
 
-      getCardsData(idSchool = 1) {
+      getCardsData() {
         fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/events/manage/', { method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': "Bearer " + this.props.route.params.token}, body: JSON.stringify({ userId: this.props.route.params.id }) })
           .then(response => response.json())
           .then(jsonResponse => this.setState({ eventStack: jsonResponse }));

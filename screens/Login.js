@@ -6,11 +6,12 @@ import { useNavigation } from '@react-navigation/native';
 
 class Login extends React.Component {
 
+  // DANS LE CADRE DE TESTS -> A RETIRER AU PLUS VITE DES QUE C'EST FINI
   constructor(props) {
     super(props)
     this.state = {
-      emailInp: "",
-      passInp: ""
+      emailInp: "theomanea9@gmail.com",
+      passInp: "motdepasse"
     }
   }
 
