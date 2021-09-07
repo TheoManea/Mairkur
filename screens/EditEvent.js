@@ -4,6 +4,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Alert, Button, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
+import moment from 'moment-timezone';
 
 
 class EditEvent extends React.Component {
@@ -33,6 +34,12 @@ class EditEvent extends React.Component {
     }
 
     this.getAssos();
+
+    // date time from UTC to local (Paris)
+    // alert(moment.utc('2020-01-03T12:52:00.000Z').tz('Europe/Paris').format('YYYY-MM-DD HH:mm:ss'));
+
+    // date time from local (Paris) to UTC
+    // alert(moment.tz('2020-01-03T12:52:00.000Z', 'YYYY-MM-DD HH:mm:ss', 'Europe/Paris').utc().format('YYYY-MM-DD HH:mm:ss'));
 
   }
 
@@ -65,8 +72,8 @@ class EditEvent extends React.Component {
             title: this.state.title,
             details: this.state.des,
             id: this.props.route.params.event.id,
-            dayStartEvent: this.dateMieux(this.props.route.params.event.dayStartEvent),
-            dayEndEvent: this.dateMieux(this.props.route.params.event.dayEndEvent),
+            dayStartEvent: moment(this.props.route.params.event.dayStartEvent).format('YYYY-MM-DD HH:mm:ss'),
+            dayEndEvent: moment(this.props.route.params.event.dayEndEvent).format('YYYY-MM-DD HH:mm:ss'),
             idAssos: this.state.assosSelected
           })
       })
@@ -78,10 +85,6 @@ class EditEvent extends React.Component {
         alert("événement modifié !")
       }
       );
-  }
-
-  dateMieux(date) {
-    return date.replace("T", " ").replace(".000Z", "")
   }
 
   render() {

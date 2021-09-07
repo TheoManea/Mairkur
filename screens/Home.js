@@ -47,13 +47,13 @@ class Home extends React.Component {
               <View style={{ width: '80%', shadowColor: 'black', shadowOffset: { width: 0, height: 2 }, shadowRadius: 6, shadowOpacity: 0.26, elevation: 8, backgroundColor: 'white', margin: 8, padding: 20, borderRadius: 10 }}>
                 <Text>{event.title}</Text>
                 <Text>{event.details}</Text>
-                <Button title="Plus d'information" onPress={() => { navigation.navigate("DetailsEvent", {event}) }} style={{ width: '30%' }}></Button>
+                <Button title="Plus d'information" onPress={() => { navigation.navigate("DetailsEvent", { event }) }} style={{ width: '30%' }}></Button>
               </View>
             ))
           }
         </View>
 
-        <Text style={{fontSize: 20, alignItems: 'center'}}>Liste des clubs</Text>
+        <Text style={{ fontSize: 20, alignItems: 'center' }}>Liste des clubs</Text>
 
         <View style={{ alignItems: 'center' }}>
           {
