@@ -13,7 +13,7 @@ class MyData extends React.Component {
     return (
     <View style={{ alignItems: 'center' }}>
         <Text>Mes données</Text>
-        
+        <Text>Nom : {this.props.route.params.name} Nom de famille: mot de passe: ****** email : </Text>
     </View>
     );
   }
