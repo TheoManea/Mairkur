@@ -36,6 +36,7 @@
     "react-native-screens": "^3.4.0",
     "react-native-web": "^0.17.1",
     "react-navigation": "^4.4.4",
+    "reactjs-popup": "^2.0.5",
     "request": "^2.79.0"
   },
   "devDependencies": {

@@ -5,15 +5,15 @@ import { useNavigation } from '@react-navigation/native';
 
 class ManageUser extends React.Component {
 
-    render() {
+  render() {
 
     const { navigation } = this.props;
 
     return (
-    <View style={{ alignItems: 'center' }}>
+      <View style={{ alignItems: 'center' }}>
         <Text>Gerer les utilisateurs</Text>
-        
-    </View>
+
+      </View>
     );
   }
 }

@@ -3,6 +3,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert, TextInput, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { json } from 'body-parser';
 
 class Login extends React.Component {
 
@@ -26,6 +27,8 @@ class Login extends React.Component {
           alert("Erreur de connexion");
         } else {
           //alert("Nice pd");
+          // on ajoute l'email à l'objet jsonResponse
+          jsonResponse.email = email
           this.props.navigation.navigate("AdminPanel", {jsonResponse});
         }
       }

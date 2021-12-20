@@ -29,7 +29,7 @@ class Home extends React.Component {
       .then(response => response.json())
       .then(jsonResponse => this.setState({ eventStack: jsonResponse }));
 
-    fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/assos')
+    fetch('http://mairkurapi.eu-west-3.elasticbeanstalk.com/api/assos/home')
       .then(response => response.json())
       .then(jsonResponse => this.setState({ assoStack: jsonResponse }));
   }
