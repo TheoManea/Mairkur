@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Alert, Button, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import '../node_modules/reactjs-popup/dist/index.css';
 
 class MyData extends React.Component {
 
@@ -36,13 +36,14 @@ class MyData extends React.Component {
     }
 
     //check if every field isn't empty
-    for (var key in bodyFIeld) {
+    for (var key in bodyField) {
       if (bodyField.hasOwnProperty(key) && p[key] === "") {
         // one field is empty
         return
       }
     }
 
+    // if password hav been changed, notice it and be sure the confPass is the same as pass
     if (this.state.passNew !== "") {
       if (this.state.confPassNew === this.state.passNew) {
         bodyField.password = this.state.passNew
